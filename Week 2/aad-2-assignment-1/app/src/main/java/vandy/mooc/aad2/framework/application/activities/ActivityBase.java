@@ -67,9 +67,9 @@ public abstract class ActivityBase extends LifecycleLoggingActivity {
                                            @NonNull int[] grantResults) {
         // Redirect hook call to permission helper method.
         PermissionUtils.onRequestPermissionsResult(this,
-                                                   requestCode,
-                                                   permissions,
-                                                   grantResults);
+                requestCode,
+                permissions,
+                grantResults);
     }
 
     /**

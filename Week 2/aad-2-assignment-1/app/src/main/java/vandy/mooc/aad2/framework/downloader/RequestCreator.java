@@ -117,7 +117,6 @@ public class RequestCreator<R> {
     }
 
     /**
-     *
      * Sets request tag.
      *
      * @param tag Any string.

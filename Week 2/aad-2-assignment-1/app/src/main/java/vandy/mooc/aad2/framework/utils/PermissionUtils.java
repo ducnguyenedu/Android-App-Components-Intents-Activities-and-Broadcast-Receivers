@@ -24,16 +24,16 @@ import vandy.mooc.aad2.assignment.R;
 @TargetApi(Build.VERSION_CODES.M)
 public final class PermissionUtils {
     /**
+     * RequestListener ID used in permission request calls.
+     */
+    private static final int REQUEST_EXTERNAL_STORAGE_READ_WRITE = 1;
+
+    /**
      * Ensure this class is only used as a utility.
      */
     private PermissionUtils() {
         throw new AssertionError();
     }
-
-    /**
-     * RequestListener ID used in permission request calls.
-     */
-    private static final int REQUEST_EXTERNAL_STORAGE_READ_WRITE = 1;
 
     /*
      * Activity lifecycle helper methods.
@@ -59,7 +59,7 @@ public final class PermissionUtils {
         // permissions from the user. In our case we need to read
         // and write to external storage.
         if (BuildConfig.DEBUG
-            && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // Call helper to do all the work.
             requestExternalStorageReadWritePermission(activity);
         }
@@ -78,11 +78,11 @@ public final class PermissionUtils {
         final boolean readPermission =
                 ActivityCompat.checkSelfPermission
                         (activity, Manifest.permission.READ_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_GRANTED;
+                        == PackageManager.PERMISSION_GRANTED;
         final boolean writePermission =
                 ActivityCompat.checkSelfPermission
                         (activity, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_GRANTED;
+                        == PackageManager.PERMISSION_GRANTED;
 
         // External storage read/write permission has not been granted.
         if (!readPermission || !writePermission) {
@@ -107,7 +107,7 @@ public final class PermissionUtils {
             @NonNull String[] permissions,
             @NonNull int[] grantResults) {
         if (requestCode
-            == PermissionUtils.REQUEST_EXTERNAL_STORAGE_READ_WRITE) {
+                == PermissionUtils.REQUEST_EXTERNAL_STORAGE_READ_WRITE) {
             // Received a read/write external storage permission request code.
 
             // Get the activity's main view.
@@ -118,16 +118,16 @@ public final class PermissionUtils {
             // Now display the grant or denial of this permission request
             // via an unobtrusive toast message.
             if (grantResults.length == 2
-                && grantResults[0] == PackageManager.PERMISSION_GRANTED
-                && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                    && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 // Show granted replay message.
                 Snackbar.make(layout,
-                              R.string.permission_available_external_storage,
-                              Snackbar.LENGTH_SHORT).show();
+                        R.string.permission_available_external_storage,
+                        Snackbar.LENGTH_SHORT).show();
             } else {
                 // Show denied replay message.
                 Snackbar.make(layout, R.string.permissions_not_granted,
-                              Snackbar.LENGTH_SHORT).show();
+                        Snackbar.LENGTH_SHORT).show();
             }
 
             // Signal that we have handled the permissions.

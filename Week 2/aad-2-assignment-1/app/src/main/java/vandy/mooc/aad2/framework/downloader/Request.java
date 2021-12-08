@@ -175,7 +175,7 @@ public final class Request<R> {
         try {
             return Uri.parse(
                     URLDecoder.decode(getQueryParameter(uri, URI_KEY),
-                                      "UTF-8"));
+                            "UTF-8"));
         } catch (UnsupportedEncodingException e) {
             return null;
         }
@@ -375,19 +375,19 @@ public final class Request<R> {
 
     public void start() {
         Preconditions.checkNotNull(mDownloader,
-                                   "Unable to start a request; no downloader "
-                                           + "set");
+                "Unable to start a request; no downloader "
+                        + "set");
         Preconditions.checkNotNull(mTarget,
-                                   "Unable to start a request; no target set");
+                "Unable to start a request; no target set");
         Preconditions.checkState(isState(RequestState.CREATED),
-                                 "Request can only be started once");
+                "Request can only be started once");
 
         setState(RequestState.STARTED);
 
         // Inform target that load operation is starting.
         mTarget.onLoadStarted(
                 ResourceUtils.getResourceDrawable(mContext,
-                                                  mPlaceholderId));
+                        mPlaceholderId));
 
         // Execute the load operation. The downloader maintains a reference
         // to this request which it used to make numerous loading lifecycle
@@ -433,7 +433,7 @@ public final class Request<R> {
         }
 
         Preconditions.checkState(mDownloader == null,
-                                 "recycle: downloader not properly terminated");
+                "recycle: downloader not properly terminated");
 
         // Now that we know we own this target (if one was set) we tell it to
         // release its resources.
@@ -908,17 +908,17 @@ public final class Request<R> {
         @SuppressWarnings("unchecked")
         public Request<R> build() {
             return new Request(mContext,
-                               mUri,
-                               mTarget,
-                               mPlaceholderId,
-                               mErrorId,
-                               mWidth,
-                               mHeight,
-                               mNetworkPolicy,
-                               mMemoryPolicy,
-                               mDownloadPolicy,
-                               mRequestListener,
-                               mTag);
+                    mUri,
+                    mTarget,
+                    mPlaceholderId,
+                    mErrorId,
+                    mWidth,
+                    mHeight,
+                    mNetworkPolicy,
+                    mMemoryPolicy,
+                    mDownloadPolicy,
+                    mRequestListener,
+                    mTag);
         }
     }
 }

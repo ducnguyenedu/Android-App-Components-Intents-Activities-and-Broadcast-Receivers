@@ -20,7 +20,7 @@ public class UriAdapter
      * Constructor.
      *
      * @param listener A optional OnSelectionListener.
-     * @param context The activity context.
+     * @param context  The activity context.
      */
     public UriAdapter(Context context, @Nullable OnSelectionListener listener) {
         super(context, listener);
@@ -95,7 +95,7 @@ public class UriAdapter
                     public boolean onLongClick(View view) {
                         return mOnSelectionListener != null
                                 && mOnSelectionListener.onItemLongClick(
-                                        view, position);
+                                view, position);
                     }
                 });
     }

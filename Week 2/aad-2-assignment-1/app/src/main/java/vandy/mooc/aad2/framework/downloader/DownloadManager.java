@@ -232,6 +232,17 @@ public class DownloadManager {
     }
 
     /**
+     * Clears all cached items marked with the specified tag.
+     *
+     * @param tag A tag string
+     */
+    public static int clearCache(String tag) {
+        int count = CacheUtils.clearTaggedFiles(get().mContext, tag);
+        Log.d(TAG, "Cleared " + count + " files with tag " + tag);
+        return count;
+    }
+
+    /**
      * Returns the application context used to construct this singleton.
      *
      * @return The application context.
@@ -379,7 +390,7 @@ public class DownloadManager {
     @SuppressWarnings("unused")
     private int getNetworkPolicy(Request request) {
         return request.getNetworkPolicy() != 0
-               ? request.getNetworkPolicy() : mNetworkPolicy;
+                ? request.getNetworkPolicy() : mNetworkPolicy;
     }
 
     /**
@@ -403,7 +414,7 @@ public class DownloadManager {
     @SuppressWarnings("unused")
     private int getMemoryPolicy(Request request) {
         return request.getMemoryPolicy() != 0
-               ? request.getMemoryPolicy() : mMemoryPolicy;
+                ? request.getMemoryPolicy() : mMemoryPolicy;
     }
 
     /**
@@ -426,7 +437,7 @@ public class DownloadManager {
      */
     private DownloadPolicy getDownloadPolicy(Request request) {
         return request.getDownloadPolicy() != null
-               ? request.getDownloadPolicy() : mDownloadPolicy;
+                ? request.getDownloadPolicy() : mDownloadPolicy;
     }
 
     /**
@@ -526,16 +537,6 @@ public class DownloadManager {
     public void registerDownloader(
             Class<? extends Downloader> downloaderClass) {
         mDownloaderClass = downloaderClass;
-    }
-
-    /**
-     * Clears all cached items marked with the specified tag.
-     * @param tag A tag string
-     */
-    public static int clearCache(String tag) {
-        int count = CacheUtils.clearTaggedFiles(get().mContext, tag);
-        Log.d(TAG, "Cleared " + count + " files with tag " + tag);
-        return count;
     }
 
     /**

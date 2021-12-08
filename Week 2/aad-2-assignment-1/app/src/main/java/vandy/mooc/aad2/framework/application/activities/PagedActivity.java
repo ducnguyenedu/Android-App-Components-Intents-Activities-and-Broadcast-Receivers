@@ -41,16 +41,15 @@ public class PagedActivity
         extends ActivityBase
         implements PagedFragment.OnPagedFragmentCallback {
     /**
-     * Debug logging tag.
-     */
-    private static final String TAG = "PagedActivity";
-    /**
      * String key names used for intent extras.
      */
     protected static final String EXTRA_ITEMS = "Items";
     protected static final String EXTRA_POSITION = "Position";
     protected static final String EXTRA_FRAGMENT_CLASS = "FragmentClass";
-
+    /**
+     * Debug logging tag.
+     */
+    private static final String TAG = "PagedActivity";
     /**
      * The adapter used for the view pager containing that contains fragments.
      */
@@ -214,11 +213,11 @@ public class PagedActivity
             if (position == mPosition) {
                 if (success) {
                     Log.d(TAG,
-                          "scheduling a startPostponedEnterTransition ...");
+                            "scheduling a startPostponedEnterTransition ...");
                     scheduleStartPostponedEnterTransition(view);
                 } else {
                     Log.d(TAG,
-                          "Shared element load failed; starting transition");
+                            "Shared element load failed; starting transition");
                     supportStartPostponedEnterTransition();
                 }
             }
@@ -316,7 +315,7 @@ public class PagedActivity
                         fragment.getView(), transitionName);
         if (imageView == null) {
             Log.w(TAG,
-                  "Unable to locate image view for shared element transition");
+                    "Unable to locate image view for shared element transition");
             names.clear();
             sharedElements.clear();
             return;

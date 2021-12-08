@@ -322,7 +322,7 @@ public final class FileUtils {
      */
     public static Uri getFileUri(String pathName) {
         Preconditions.checkArgument(!TextUtils.isEmpty(pathName),
-                                    "pathName must be an absolute path");
+                "pathName must be an absolute path");
         return Uri.fromFile(new File(pathName));
     }
 
@@ -354,7 +354,7 @@ public final class FileUtils {
     public static String getExtension(String pathName) {
         int index = pathName.lastIndexOf(".");
         return (0 <= index && index < pathName.length() - 1)
-               ? pathName.substring(index + 1)
-               : "";
+                ? pathName.substring(index + 1)
+                : "";
     }
 }

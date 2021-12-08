@@ -372,17 +372,17 @@ public abstract class GalleryActivityBase
         ActivityOptionsCompat options =
                 ActivityOptionsCompat.makeSceneTransitionAnimation
                         (this,
-                         view,
-                         transitionName);
+                                view,
+                                transitionName);
 
         // Call the class factory method to create the intent to start the
         // activity.
         //noinspection unchecked
         Intent intent =
                 PagedActivity.makeIntent(this,
-                                         mAdapter.getItems(),
-                                         position,
-                                         fragment);
+                        mAdapter.getItems(),
+                        position,
+                        fragment);
 
         // Start the activity. Note that the onActivityReenter() hook will
         // be called when returning from this started activity. When this
@@ -615,7 +615,7 @@ public abstract class GalleryActivityBase
                     mReenterState.getInt(PagedActivity.EXTRA_POSITION, -1);
             if (position == -1) {
                 Log.w(TAG,
-                      "No adapter position was received for return transition");
+                        "No adapter position was received for return transition");
                 names.clear();
                 sharedElements.clear();
                 return;

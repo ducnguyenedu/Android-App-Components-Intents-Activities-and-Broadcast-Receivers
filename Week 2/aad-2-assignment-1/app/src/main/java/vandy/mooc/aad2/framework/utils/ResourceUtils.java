@@ -28,7 +28,7 @@ public final class ResourceUtils {
             Context context,
             @DrawableRes int resId) {
         return resId != 0
-               ? ContextCompat.getDrawable(context, resId)
-               : null;
+                ? ContextCompat.getDrawable(context, resId)
+                : null;
     }
 }

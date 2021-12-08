@@ -54,7 +54,7 @@ public class UriUtils {
      */
     public static String getPathNameFromFileUri(Uri uri) {
         Preconditions.checkArgument(URLUtil.isFileUrl(uri.toString()),
-                                    "Invalid file uri");
+                "Invalid file uri");
         return uri.getPath();
     }
 
@@ -92,7 +92,7 @@ public class UriUtils {
     public static Uri getFileUriFromPathName(String pathName) {
         // Prevent anyone from passing a Uri.toString() value to this method.
         Preconditions.checkArgument(!URLUtil.isValidUrl(pathName),
-                                    "pathName must not be a uri string");
+                "pathName must not be a uri string");
         // Safest method is to use fromFile().
         return Uri.fromFile(new File(pathName));
     }
@@ -107,7 +107,7 @@ public class UriUtils {
     @Nullable
     public static File getFileFromUri(Uri uri) {
         Preconditions.checkArgument(URLUtil.isFileUrl(uri.toString()),
-                                    "uri must be of file uri");
+                "uri must be of file uri");
 
         return new File(uri.getPath());
     }
@@ -133,7 +133,7 @@ public class UriUtils {
      */
     public static Uri getFileContentUri(Context context, String pathName) {
         Preconditions.checkArgument(!URLUtil.isValidUrl(pathName),
-                                    "pathName must not be a uri string");
+                "pathName must not be a uri string");
         return FileProvider.getUriForFile(
                 context, getFileProviderAuthority(), new File(pathName));
     }
@@ -167,7 +167,7 @@ public class UriUtils {
             // Sanity check...
             String original = URLDecoder.decode(fileName, "UTF-8");
             Preconditions.checkState(Uri.parse(original).equals(uri),
-                                     "Cache path name generation error");
+                    "Cache path name generation error");
 
             String dirPath = CacheUtils.getCacheDirPathName(context);
             filePath = dirPath + "/" + fileName;
@@ -256,7 +256,7 @@ public class UriUtils {
         // Call helper method that uses the most secure permission granting
         // model for the each API.
         grantUriPermissions(context, intent,
-                            Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
         return intent;
     }
@@ -285,7 +285,8 @@ public class UriUtils {
      * @param uri A uri.
      * @return The base data resource name.
      */
-    public static @NonNull String getLastPathSegmentBaseName(Uri uri) {
+    public static @NonNull
+    String getLastPathSegmentBaseName(Uri uri) {
         String name = null;
 
         if (uri != null && !TextUtils.isEmpty(uri.toString())) {

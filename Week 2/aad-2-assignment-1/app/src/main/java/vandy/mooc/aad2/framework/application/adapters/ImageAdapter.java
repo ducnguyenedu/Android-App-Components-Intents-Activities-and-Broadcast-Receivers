@@ -70,7 +70,7 @@ public class ImageAdapter
     public void onViewRecycled(GridViewHolder holder) {
         if (DownloadManager.get().cancelRequest(holder.mImageView)) {
             Preconditions.checkState(mRefreshCount >= 0,
-                                     "Invalid refresh count " + mRefreshCount);
+                    "Invalid refresh count " + mRefreshCount);
             Log.d(TAG, "onViewRecycled: request cancelled");
             if (--mRefreshCount == 0) {
                 showRefresh(false);

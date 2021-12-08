@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vandy.mooc.aad2.assignment.R;
-import vandy.mooc.aad2.assignment.downloader.HaMeRDownloader;
+import vandy.mooc.aad2.assignment.downloader.*;
 import vandy.mooc.aad2.framework.application.activities.GalleryActivityBase;
 import vandy.mooc.aad2.framework.utils.ViewUtils;
 

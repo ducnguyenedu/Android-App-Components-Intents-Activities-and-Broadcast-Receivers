@@ -56,7 +56,7 @@ import vandy.mooc.aad2.framework.utils.UriUtils;
 public abstract class MainActivityBase
         extends ActivityBase
         implements RecyclerViewFragment.OnFragmentListener,
-                   InputPanelView.InputListener {
+        InputPanelView.InputListener {
     /**
      * Debug logging tag.
      */
@@ -309,8 +309,8 @@ public abstract class MainActivityBase
 
             // Rotate FAB from + to x or from x to +.
             int animResId = show
-                            ? R.anim.fab_rotate_forward
-                            : R.anim.fab_rotate_backward;
+                    ? R.anim.fab_rotate_forward
+                    : R.anim.fab_rotate_backward;
 
             // Load and start the animation.
             mAddFab.startAnimation(
@@ -475,7 +475,7 @@ public abstract class MainActivityBase
      *
      * @param urls The list of URLs to pass to the gallery activity.
      */
-    protected void startDownload(ArrayList<Uri> urls){
+    protected void startDownload(ArrayList<Uri> urls) {
         throw new UnsupportedOperationException();
     }
 
@@ -488,7 +488,7 @@ public abstract class MainActivityBase
      *
      * @param urls The list of URLs to pass to the gallery activity.
      */
-    protected void startDownloadForResult(ArrayList<Uri> urls){
+    protected void startDownloadForResult(ArrayList<Uri> urls) {
         throw new UnsupportedOperationException();
     }
 
@@ -500,8 +500,8 @@ public abstract class MainActivityBase
         final String[] stringArray =
                 getResources().getStringArray(
                         AssignmentUtils.getAssignment(this) <= 4
-                        ? R.array.default_image_urls
-                        : R.array.default_sound_urls);
+                                ? R.array.default_image_urls
+                                : R.array.default_sound_urls);
         ArrayList<Uri> uris = UriUtils.parseAll(stringArray);
         mFragment.addItems(uris);
         updateViews();

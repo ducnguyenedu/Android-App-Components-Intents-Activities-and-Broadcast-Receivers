@@ -13,9 +13,9 @@ public interface Decoder<R> {
      * Called by the framework to determine if the decoder can or needs to pre
      * validate incoming content by calling the isContentValid() method.
      *
+     * @param source An input source data type.
      * @return {@code true} if canValidateContent should be called, {@code
      * false} if not.
-     * @param source An input source data type.
      */
     boolean canValidateContent(Class source);
 

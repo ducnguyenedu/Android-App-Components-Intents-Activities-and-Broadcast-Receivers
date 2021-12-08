@@ -187,8 +187,8 @@ public final class ViewUtils {
         if (root instanceof ImageView) {
             String name = ViewCompat.getTransitionName(root);
             return TextUtils.equals(name, transitionName)
-                   ? (ImageView) root
-                   : null;
+                    ? (ImageView) root
+                    : null;
         } else if (root instanceof ViewGroup) {
             // Search all descendants for a match.
             ViewGroup viewGroup = (ViewGroup) root;
@@ -211,9 +211,9 @@ public final class ViewUtils {
         }
 
         Log.w(TAG,
-              "findImageViewWithTransitionName: no image view with transition"
-                      + " name "
-                      + transitionName);
+                "findImageViewWithTransitionName: no image view with transition"
+                        + " name "
+                        + transitionName);
 
         return null;
     }

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     These string resources are not currently used in the framework, but are
     being kept because they will likely be useful for other MOOCs directly download
     images instead of using the DownloadManger to install the downloaded images

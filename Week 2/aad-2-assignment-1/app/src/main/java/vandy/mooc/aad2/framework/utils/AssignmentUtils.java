@@ -87,8 +87,8 @@ public final class AssignmentUtils {
             // the current assignment choice in onPrepareOptionsMenu.
             final SubMenu subMenu =
                     menu.addSubMenu(SUBMENU_GROUP_ID,
-                                    ACTION_ASSIGNMENTS, Menu.NONE,
-                                    null);
+                            ACTION_ASSIGNMENTS, Menu.NONE,
+                            null);
 
             // Now add each supported assignment to the submenu.
             for (int i = 1; i <= ASSIGNMENT; i++) {
@@ -100,9 +100,9 @@ public final class AssignmentUtils {
 
         // Now add the about menu item to end of the main menu.
         menu.add(0,
-                 ACTION_ABOUT,
-                 0xffff,
-                 activity.getString(R.string.action_about));
+                ACTION_ABOUT,
+                0xffff,
+                activity.getString(R.string.action_about));
     }
 
     /**
@@ -265,11 +265,11 @@ public final class AssignmentUtils {
 
         throw new IllegalStateException
                 ("Current assignment is set to "
-                         + current
-                         + " but code"
-                         + " for assignment "
-                         + numbers[0]
-                         + " is being used");
+                        + current
+                        + " but code"
+                        + " for assignment "
+                        + numbers[0]
+                        + " is being used");
     }
 
     /**
@@ -333,8 +333,8 @@ public final class AssignmentUtils {
         if (!canRunAssignment(assignment)) {
             throw new IllegalArgumentException
                     ("Assignment "
-                             + assignment
-                             + " is not supported by this code base.");
+                            + assignment
+                            + " is not supported by this code base.");
         }
 
         SharedPreferences preferences =
@@ -357,8 +357,8 @@ public final class AssignmentUtils {
     @SuppressWarnings("WeakerAccess")
     public static boolean canRunAssignment(int assignment) {
         return ASSIGNMENT_SWITCHING
-               ? 1 <= assignment && assignment <= ASSIGNMENT
-               : assignment == ASSIGNMENT;
+                ? 1 <= assignment && assignment <= ASSIGNMENT
+                : assignment == ASSIGNMENT;
     }
 
     /**
@@ -380,7 +380,7 @@ public final class AssignmentUtils {
         final Spanned spanned;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             spanned = Html.fromHtml(getAssignmentAbout(context),
-                                    FROM_HTML_MODE_COMPACT);
+                    FROM_HTML_MODE_COMPACT);
         } else {
             spanned = Html.fromHtml(getAssignmentAbout(context));
         }
@@ -390,11 +390,11 @@ public final class AssignmentUtils {
         alertDialogBuilder.setCancelable(false);
         alertDialogBuilder.setPositiveButton
                 (R.string.ok_button,
-                 new DialogInterface.OnClickListener() {
-                     public void onClick(DialogInterface dialog, int id) {
-                         dialog.cancel();
-                     }
-                 });
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
 
         // Create alert dialog.
         final AlertDialog alertDialog = alertDialogBuilder.create();

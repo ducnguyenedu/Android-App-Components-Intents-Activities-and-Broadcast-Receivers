@@ -35,9 +35,9 @@ public class BitmapDecoder implements Decoder<Bitmap> {
      * Called by the framework to determine if the decoder can or needs to pre
      * validate incoming content by calling the isContentValid() method.
      *
+     * @param source An input source class type.
      * @return {@code true} if canValidateContent should be called, {@code
      * false} if not.
-     * @param source An input source class type.
      */
     @Override
     public boolean canValidateContent(Class source) {
@@ -79,10 +79,10 @@ public class BitmapDecoder implements Decoder<Bitmap> {
         options.inJustDecodeBounds = true;
 
         if (input instanceof File) {
-            return decodeFile(((File)input).getPath(), width, height);
+            return decodeFile(((File) input).getPath(), width, height);
         } else if (input instanceof Uri) {
             return decodeFile(UriUtils.getPathNameFromFileUri((Uri) input),
-                              width, height);
+                    width, height);
         } else if (input instanceof InputStream) {
             return decodeStream(((InputStream) input), width, height);
         }

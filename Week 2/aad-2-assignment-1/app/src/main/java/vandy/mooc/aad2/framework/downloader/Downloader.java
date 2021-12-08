@@ -13,6 +13,7 @@ public interface Downloader<R> {
 
     /**
      * Handles the decoding phase of a download request.
+     *
      * @param url The downloaded (or cached) file uri.
      * @return The target decoded resource.
      */
@@ -24,16 +25,16 @@ public interface Downloader<R> {
     void cancel();
 
     /**
+     * Required by framework for cancelling a request.
+     */
+    Request<R> getRequest();
+
+    /**
      * Sets the request and context for this download handler.
      *
      * @param request The request associated with this download operation.
      */
     void setRequest(Request<R> request);
-
-    /**
-     * Required by framework for cancelling a request.
-     */
-    Request<R> getRequest();
 
     /**
      * Returns the running status of the download operation.

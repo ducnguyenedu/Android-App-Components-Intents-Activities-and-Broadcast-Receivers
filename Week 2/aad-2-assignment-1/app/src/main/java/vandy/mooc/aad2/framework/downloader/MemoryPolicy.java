@@ -20,6 +20,22 @@ public enum MemoryPolicy {
     NO_CACHE(1 << 1);
 
     /**
+     * The value of this enumerated instance. Each enumerated value is a unique
+     * bit shift so that multiple enumerated values can be OR'd together to form
+     * a single bit mask.
+     */
+    final int mValue;
+
+    /**
+     * Constructor.
+     *
+     * @param value The enumerated value for this object.
+     */
+    MemoryPolicy(int value) {
+        this.mValue = value;
+    }
+
+    /**
      * Convenience static method that takes a network policy mask and determines
      * if the the SKIP_CACHE policy is set.
      *
@@ -39,22 +55,6 @@ public enum MemoryPolicy {
      */
     static boolean writeToCache(int policy) {
         return (policy & NO_CACHE.mValue) == 0;
-    }
-
-    /**
-     * The value of this enumerated instance. Each enumerated value is a unique
-     * bit shift so that multiple enumerated values can be OR'd together to form
-     * a single bit mask.
-     */
-    final int mValue;
-
-    /**
-     * Constructor.
-     *
-     * @param value The enumerated value for this object.
-     */
-    MemoryPolicy(int value) {
-        this.mValue = value;
     }
 
     /**

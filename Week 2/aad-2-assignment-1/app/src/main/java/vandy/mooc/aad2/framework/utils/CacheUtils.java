@@ -88,8 +88,8 @@ public final class CacheUtils {
     @Nullable
     public static File getCacheFile(Context context, String fileName) {
         return new File(getCacheDirPathName(context)
-                                + File.separator
-                                + fileName);
+                + File.separator
+                + fileName);
     }
 
     /**
@@ -126,7 +126,7 @@ public final class CacheUtils {
 
         // Bound inside min/max size for disk cache.
         return Math.max(Math.min(size, MAX_DISK_CACHE_SIZE),
-                        MIN_DISK_CACHE_SIZE);
+                MIN_DISK_CACHE_SIZE);
     }
 
     /**
@@ -181,7 +181,7 @@ public final class CacheUtils {
      * Deletes all cached files with the specified tag.
      *
      * @param context A context.
-     * @param tag The tag to match.
+     * @param tag     The tag to match.
      * @return The count of deleted files.
      */
     public static int clearTaggedFiles(Context context, String tag) {
@@ -193,7 +193,7 @@ public final class CacheUtils {
      * specified tag.
      *
      * @param path The directory to walk.
-     * @param tag The tag to match.
+     * @param tag  The tag to match.
      * @return The count of deleted files.
      */
     private static int walkAndDelete(String path, String tag) {

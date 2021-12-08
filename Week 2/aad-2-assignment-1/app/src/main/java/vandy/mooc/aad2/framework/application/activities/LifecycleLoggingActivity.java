@@ -77,8 +77,8 @@ public abstract class LifecycleLoggingActivity
         // hook method is being called.
         super.onResume();
         Log.d(TAG,
-              "onResume() - the activity has become visible (it is now " +
-                      "\"resumed\")");
+                "onResume() - the activity has become visible (it is now " +
+                        "\"resumed\")");
     }
 
     /**
@@ -95,8 +95,8 @@ public abstract class LifecycleLoggingActivity
         // hook method is being called.
         super.onPause();
         Log.d(TAG,
-              "onPause() - another activity is taking focus (this activity " +
-                      "is about to be \"paused\")");
+                "onPause() - another activity is taking focus (this activity " +
+                        "is about to be \"paused\")");
     }
 
     /**
@@ -111,8 +111,8 @@ public abstract class LifecycleLoggingActivity
         // hook method is being called.
         super.onStop();
         Log.d(TAG,
-              "onStop() - the activity is no longer visible (it is now " +
-                      "\"stopped\")");
+                "onStop() - the activity is no longer visible (it is now " +
+                        "\"stopped\")");
     }
 
     /**

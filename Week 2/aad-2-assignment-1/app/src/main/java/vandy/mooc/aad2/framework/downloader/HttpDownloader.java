@@ -138,18 +138,18 @@ public final class HttpDownloader {
             // Open the input stream and pass to decoder to pre-validate.
             try (final InputStream inputStream =
                          getInputStream(request.mContext,
-                                        request.mUri,
-                                        request.mNetworkPolicy)) {
+                                 request.mUri,
+                                 request.mNetworkPolicy)) {
                 // See if the request target can handle this stream.
                 Preconditions.checkNotNull(inputStream);
                 if (!request.getResourceDecoder().isContentValid(inputStream)) {
                     Log.w(TAG,
-                          "Decoder reported invalid content for " + request);
+                            "Decoder reported invalid content for " + request);
                     return null;
                 }
             } catch (Exception e) {
                 Log.w(TAG,
-                      "HTTP download was unable to open an input stream: " + e);
+                        "HTTP download was unable to open an input stream: " + e);
                 return null;
             }
         }
@@ -189,14 +189,14 @@ public final class HttpDownloader {
         // is responsible for managing these output resources.
         try (final InputStream inputStream =
                      getInputStream(request.mContext,
-                                    request.mUri,
-                                    request.mNetworkPolicy);
+                             request.mUri,
+                             request.mNetworkPolicy);
              final OutputStream outputStream = new FileOutputStream(tempFile)) {
             copyStream(inputStream, outputStream, request);
             if (!tempFile.renameTo(file)) {
                 Log.w(TAG,
-                      "HTTP download: cache file already created by a "
-                              + "duplicate concurrent download");
+                        "HTTP download: cache file already created by a "
+                                + "duplicate concurrent download");
             }
 
             // Now cleanup the temp file.
@@ -233,7 +233,7 @@ public final class HttpDownloader {
      */
     public static void clearCache(Context context) {
         FileUtils.deleteDirectory(context,
-                                  CacheUtils.getCacheDirPathName(context));
+                CacheUtils.getCacheDirPathName(context));
     }
 
     /**

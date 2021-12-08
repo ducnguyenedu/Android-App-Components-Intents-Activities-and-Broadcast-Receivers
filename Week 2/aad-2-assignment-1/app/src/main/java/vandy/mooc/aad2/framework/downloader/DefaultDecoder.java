@@ -148,7 +148,7 @@ public class DefaultDecoder implements Decoder<Uri> {
     private Uri decodeFile(String pathName)
             throws IOException {
         return decodeStream(new FileInputStream(pathName),
-                            FileUtils.getExtension(pathName));
+                FileUtils.getExtension(pathName));
     }
 
     /**

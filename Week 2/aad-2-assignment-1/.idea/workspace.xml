@@ -5,32 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57c1d438-95de-4520-9a6e-bb3ac62f6675" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/vandy/mooc/aad2/assignment/AssignmentTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/vandy/mooc/aad2/assignment/AssignmentTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/assignment/downloader/ImageDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/assignment/downloader/ImageDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/assignment/activities/GalleryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/assignment/activities/GalleryActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/ActivityBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/ActivityBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/GalleryActivityBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/GalleryActivityBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/LifecycleLoggingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/LifecycleLoggingActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/MainActivityBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/MainActivityBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/PagedActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/activities/PagedActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/adapters/BaseAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/adapters/BaseAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/adapters/ImageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/adapters/ImageAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/adapters/UriAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/adapters/UriAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/fragments/PagedFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/fragments/PagedFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/fragments/RecyclerViewFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/fragments/RecyclerViewFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/views/InputPanelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/views/InputPanelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/views/ZoomOutPageTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/application/views/ZoomOutPageTransformer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/AbstractDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/AbstractDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/BaseTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/BaseTarget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/BitmapDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/BitmapDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/CacheDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/CacheDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/Decoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/Decoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/DefaultDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/DefaultDecoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/DownloadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/DownloadManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/ImageViewTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/ImageViewTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/Downloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/HttpDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/HttpDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/MemoryPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/MemoryPolicy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/Request.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/RequestCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/RequestCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/RequestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/RequestManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/Target.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/ViewTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/downloader/ViewTarget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/AssignmentUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/AssignmentUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/CacheUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/CacheUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/FileUtils.java" afterDir="false" />
@@ -38,11 +33,27 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/ResourceUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/ResourceUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/UriUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/UriUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/ViewUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/vandy/mooc/aad2/framework/utils/ViewUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v21/grid_item_selector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v21/grid_item_selector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/item_unchecked.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/item_unchecked.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_paged.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_paged.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_paged.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_paged.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recycler_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recycler_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_grid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_grid.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_action_mode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_action_mode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_music.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_music.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_select_all.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_select_all.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/plurals.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/plurals.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/file_paths.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/file_paths.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ducng\.android\avd\Pixel_2_API_30.avd]" />
   <component name="ExternalProjectsData">
@@ -211,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638954406107</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <created>1638954571213</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1638954571213</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

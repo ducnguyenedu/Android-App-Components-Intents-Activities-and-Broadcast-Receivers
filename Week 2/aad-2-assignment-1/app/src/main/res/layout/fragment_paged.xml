@@ -4,10 +4,10 @@
     android:id="@+id/fragment_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/view_image_activity_vertical_margin"
     android:paddingLeft="@dimen/view_image_activity_horizontal_margin"
-    android:paddingRight="@dimen/view_image_activity_horizontal_margin"
     android:paddingTop="@dimen/view_image_activity_vertical_margin"
+    android:paddingRight="@dimen/view_image_activity_horizontal_margin"
+    android:paddingBottom="@dimen/view_image_activity_vertical_margin"
     tools:context="vandy.mooc.aad2.framework.application.activities.PagedActivity">
 
     <ImageView
@@ -18,5 +18,5 @@
         android:layout_alignParentTop="true"
         android:adjustViewBounds="true"
         android:contentDescription="@string/default_image_descriptor"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop" />
 </RelativeLayout>

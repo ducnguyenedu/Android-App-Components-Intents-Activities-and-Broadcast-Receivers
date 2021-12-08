@@ -82,6 +82,7 @@ public abstract class AbstractDownloader<R> implements Downloader<R> {
 
     /**
      * Helper method that forwards resource decode operation to the request.
+     *
      * @param uri The source file uri.
      * @return The target resource or null if the decoding failed or the
      * request has expired.
