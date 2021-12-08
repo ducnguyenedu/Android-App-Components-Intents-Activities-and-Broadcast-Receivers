@@ -1,7 +1,9 @@
 package vandy.mooc.aad2.assignment.activities;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -57,7 +59,9 @@ public class MainActivity extends MainActivityBase {
     protected void startDownload(ArrayList<Uri> urls) {
         // Start the Gallery Activity with the Uri(s) passed in.
         // TODO - you fill in here.
-        
+        Log.e(TAG, " MainActivity.startDownloadForResult");
+        Intent startIntent = GalleryActivity.makeStartIntent(this, urls);
+        startActivityForResult(startIntent, 2);
     }
 
     /**
