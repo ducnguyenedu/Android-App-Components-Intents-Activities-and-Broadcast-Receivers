@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.webkit.URLUtil;
 
 import androidx.annotation.NonNull;
 
@@ -12,10 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vandy.mooc.aad2.assignment.R;
+import vandy.mooc.aad2.assignment.downloader.HaMeRDownloader;
 import vandy.mooc.aad2.framework.application.activities.GalleryActivityBase;
-
-import static vandy.mooc.aad2.framework.utils.UriUtils.*;
-import static vandy.mooc.aad2.framework.utils.ViewUtils.showToast;
+import vandy.mooc.aad2.framework.utils.ViewUtils;
 
 /**
  * This activity class contains helper methods to support different was you can
@@ -59,17 +59,18 @@ public class GalleryActivity
         // https://developer.android.com/training/basics/firstapp/starting-activity.html
 
         // TODO - you fill in here.
-        
+        Log.e(TAG, "makeStartIntent");
+        Intent intent = new Intent(context, GalleryActivity.class);
 
         // Put the received list of input URLs as an intent
         // use putParcelableArrayListExtra(String, ArrayList<Uri>) on the intent
         // using the predefined INTENT_EXTRA_URLS extra name.
         // TODO - you fill in here.
-        
+        intent.putExtra(INTENT_EXTRA_URLS, inputUrls);
 
         // Return the intent.
         // TODO - you fill in here replacing null with the appropriate value.
-        return null;
+        return intent;
     }
 
     /*
@@ -78,6 +79,7 @@ public class GalleryActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.e(TAG, "onCreate");
         // Always call super class method first. Normally you would follow this
         // call with a call to inflate the activity's layout from XML, but this
         // is not necessary here because the assignment super class method will
@@ -95,8 +97,12 @@ public class GalleryActivity
             // the setItems() helper method.
 
             // TODO - you fill in here.
-            
+            List<Uri> urlList = extractInputUrlsFromIntent(getIntent());
+            if (urlList != null) {
+                setItems(urlList);
+            }
         }
+        registerDownloader(HaMeRDownloader.class);
     }
 
     /**
@@ -112,7 +118,11 @@ public class GalleryActivity
         // validateInput() helper method. If the entire list of received URLs
         // are valid, then return this list. Otherwise return an empty list.
         // TODO - you fill in here replacing this statement with your solution.
-        return null;
+        Log.e(TAG, "extractInputUrlsFromIntent");
+        ArrayList<Uri> urls = intent.getExtras().getParcelableArrayList(INTENT_EXTRA_URLS);
+        if (validateInput(urls)) return urls;
+        else
+            return null;
     }
 
     /**
@@ -139,7 +149,19 @@ public class GalleryActivity
         // Return true if all the URLs are valid.
 
         // TODO - you fill in here replacing this statement with you solution.
-        return false;
+        Log.e(TAG, "Entered GalleryActivity.validateInput");
+        if (inputUrls == null) {
+            ViewUtils.showToast(this, R.string.input_url_list_is_null);
+        } else if (inputUrls.size() == 0) {
+            ViewUtils.showToast(this, R.string.input_url_list_is_empty);
+        } else {
+            for (Uri url : inputUrls) {
+                if (!URLUtil.isValidUrl(url.toString())) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     /**
