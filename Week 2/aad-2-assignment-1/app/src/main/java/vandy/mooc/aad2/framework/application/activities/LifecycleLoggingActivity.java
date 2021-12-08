@@ -1,8 +1,9 @@
 package vandy.mooc.aad2.framework.application.activities;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * This abstract class extends the Activity class and overrides

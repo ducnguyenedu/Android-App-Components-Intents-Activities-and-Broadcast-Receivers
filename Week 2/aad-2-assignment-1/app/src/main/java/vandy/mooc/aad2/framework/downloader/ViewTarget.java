@@ -1,10 +1,11 @@
 package vandy.mooc.aad2.framework.downloader;
 
 import android.graphics.drawable.Drawable;
+import android.view.View;
+
 import androidx.annotation.CallSuper;
 import androidx.annotation.MainThread;
 import androidx.annotation.Nullable;
-import android.view.View;
 
 import java.lang.ref.WeakReference;
 

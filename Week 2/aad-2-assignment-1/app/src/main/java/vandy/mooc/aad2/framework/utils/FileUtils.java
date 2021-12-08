@@ -3,9 +3,10 @@ package vandy.mooc.aad2.framework.utils;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Environment;
+import android.text.TextUtils;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import android.text.TextUtils;
 
 import java.io.File;
 import java.io.FileInputStream;

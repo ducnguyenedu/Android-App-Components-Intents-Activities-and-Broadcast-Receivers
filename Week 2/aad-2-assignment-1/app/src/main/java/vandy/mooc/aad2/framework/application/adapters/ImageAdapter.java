@@ -4,15 +4,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.net.Uri;
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.core.view.ViewCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import vandy.mooc.aad2.assignment.R;
 import vandy.mooc.aad2.framework.downloader.DownloadManager;

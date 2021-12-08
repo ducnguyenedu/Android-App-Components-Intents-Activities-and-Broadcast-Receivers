@@ -3,11 +3,12 @@ package vandy.mooc.aad2.framework.application.activities;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
 import androidx.annotation.CallSuper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import vandy.mooc.aad2.framework.utils.AssignmentUtils;
 import vandy.mooc.aad2.framework.utils.PermissionUtils;

@@ -1,6 +1,7 @@
 package vandy.mooc.aad2.framework.downloader;
 
 import android.net.Uri;
+
 import androidx.annotation.Nullable;
 
 /**

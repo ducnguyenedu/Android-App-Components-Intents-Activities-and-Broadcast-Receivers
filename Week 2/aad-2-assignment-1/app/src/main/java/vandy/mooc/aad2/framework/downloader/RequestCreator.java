@@ -2,9 +2,10 @@ package vandy.mooc.aad2.framework.downloader;
 
 import android.content.Context;
 import android.net.Uri;
+import android.widget.ImageView;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
-import android.widget.ImageView;
 
 import vandy.mooc.aad2.framework.utils.Utils;
 

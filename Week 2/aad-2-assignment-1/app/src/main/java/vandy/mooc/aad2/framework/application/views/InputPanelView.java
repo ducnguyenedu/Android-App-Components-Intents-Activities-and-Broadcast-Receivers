@@ -1,16 +1,17 @@
 package vandy.mooc.aad2.framework.application.views;
 
 import android.content.Context;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-
-import androidx.appcompat.widget.AppCompatEditText;
-import androidx.core.content.ContextCompat;
 import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.core.content.ContextCompat;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import vandy.mooc.aad2.assignment.R;
 import vandy.mooc.aad2.framework.utils.ViewUtils;

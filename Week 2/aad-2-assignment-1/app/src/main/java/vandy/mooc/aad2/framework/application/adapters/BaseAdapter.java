@@ -1,10 +1,11 @@
 package vandy.mooc.aad2.framework.application.adapters;
 
 import android.content.Context;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Collections;

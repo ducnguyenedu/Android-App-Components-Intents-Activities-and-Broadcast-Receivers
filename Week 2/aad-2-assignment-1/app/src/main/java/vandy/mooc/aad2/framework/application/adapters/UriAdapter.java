@@ -2,13 +2,14 @@ package vandy.mooc.aad2.framework.application.adapters;
 
 import android.content.Context;
 import android.net.Uri;
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import vandy.mooc.aad2.assignment.R;
 

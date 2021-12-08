@@ -1,7 +1,8 @@
 package vandy.mooc.aad2.framework.application.views;
 
-import androidx.viewpager.widget.ViewPager;
 import android.view.View;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Produces a nice view slide animation when changing between pages

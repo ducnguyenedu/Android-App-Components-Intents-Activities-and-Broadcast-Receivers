@@ -4,9 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView;
+
+import androidx.annotation.Nullable;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -2,11 +2,12 @@ package vandy.mooc.aad2.framework.downloader;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
+import android.webkit.URLUtil;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.MainThread;
 import androidx.annotation.Nullable;
-import android.util.Log;
-import android.webkit.URLUtil;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

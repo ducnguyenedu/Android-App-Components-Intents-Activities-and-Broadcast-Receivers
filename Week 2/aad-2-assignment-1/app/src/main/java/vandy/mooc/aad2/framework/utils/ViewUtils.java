@@ -2,9 +2,6 @@ package vandy.mooc.aad2.framework.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import androidx.annotation.StringRes;
-import androidx.annotation.UiThread;
-import androidx.core.view.ViewCompat;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -15,6 +12,10 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.StringRes;
+import androidx.annotation.UiThread;
+import androidx.core.view.ViewCompat;
 
 import java.util.ArrayList;
 import java.util.List;

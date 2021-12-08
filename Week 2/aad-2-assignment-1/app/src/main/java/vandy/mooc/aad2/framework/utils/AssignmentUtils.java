@@ -1,5 +1,7 @@
 package vandy.mooc.aad2.framework.utils;
 
+import static android.text.Html.FROM_HTML_MODE_COMPACT;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -7,17 +9,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 
-import vandy.mooc.aad2.assignment.R;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
-import static android.text.Html.FROM_HTML_MODE_COMPACT;
+import vandy.mooc.aad2.assignment.R;
 
 /**
  * Class containing static helper methods to perform assignment related tasks.

@@ -2,9 +2,10 @@ package vandy.mooc.aad2.framework.downloader;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView;
+
+import androidx.annotation.Nullable;
 
 import java.io.InputStream;
 
