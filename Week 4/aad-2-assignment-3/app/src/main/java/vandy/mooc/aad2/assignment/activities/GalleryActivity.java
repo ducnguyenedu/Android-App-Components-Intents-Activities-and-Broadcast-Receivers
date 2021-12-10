@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -56,7 +58,7 @@ public class GalleryActivity
         // See this guide if you have any difficulties.
         // https://developer.android.com/training/basics/firstapp/starting-activity.html
         // TODO - you fill in here.
-        Intent intent = new Intent(context,GalleryActivity.class);
+        Intent intent = new Intent(context  ,GalleryActivity.class);
 
         // Put the received list of input URLs as an intent
         // use putParcelableArrayListExtra(String, ArrayList<Uri>) on the intent
@@ -66,7 +68,7 @@ public class GalleryActivity
 
         // Return the intent.
         // TODO - you fill in here replacing null with the appropriate value.
-        return null;
+        return intent;
     }
 
     /*
@@ -92,7 +94,9 @@ public class GalleryActivity
             // starting intent and pass these URLs into the super class using
             // the setItems() helper method.
             // TODO - you fill in here.
-            
+            List<Uri> urlList = extractInputUrlsFromIntent(getIntent());
+            if(urlList != null)
+                setItems(urlList);
         } else {
             // The activity is being recreated after configuration change.
             // You can restore your activity's saved state from the passed
@@ -105,7 +109,7 @@ public class GalleryActivity
         // Call base class helper method to register your downloader
         // implementation class.
         // TODO - you fill in here.
-        
+        registerDownloader(HaMeRDownloader.class);
     }
 
     /**
@@ -122,7 +126,10 @@ public class GalleryActivity
         // validateInput() helper method. If the entire list of received URLs
         // are valid, then return this list. Otherwise return null.
         // TODO - you fill in here replacing this statement with you solution.
-        return null;
+        ArrayList<Uri> urls =  intent.getParcelableArrayListExtra(INTENT_EXTRA_URLS);
+        if (!validateInput(urls))
+            return null;
+        return urls;
     }
 
     /**
@@ -148,7 +155,25 @@ public class GalleryActivity
         //
         // Return true if all the URLs are valid.
         // TODO - you fill in here replacing this statement with you solution.
-        return false;
+        if(inputUrls == null) {
+            ViewUtils.showToast(getApplicationContext(), R.string.input_url_list_is_null);
+            return false;
+        }
+
+        else if(inputUrls.size() == 0) {
+            ViewUtils.showToast(getApplicationContext(), R.string.input_url_list_is_empty);
+            return false;
+        }
+
+        else {
+            for (Uri uri : inputUrls) {
+                if (!UriUtils.isValidUrl(uri.toString())) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -164,18 +189,18 @@ public class GalleryActivity
     protected Intent makeBroadcastIntent(@NonNull ArrayList<Uri> urls) {
         // Create a new data intent.
         // TODO -- you fill in here.
-        
+        Intent intent = new Intent();
         // Put the received outputUrls list into the intent as an
         // ParcelableArrayListExtra.
         // TODO -- you fill in here.
-        
+        intent.putParcelableArrayListExtra(INTENT_EXTRA_URLS, urls);
         // Set the intent action to ACTION_VIEW_LOCAL as is
         // expected by the MainActivity's BroadcastReceiver implementation.
         // TODO -- you fill in here.
-        
+        intent.setAction(MainActivity.ACTION_VIEW_LOCAL);
         //  Return the intent.
         // TODO -- you fill in here replacing null with your intent.
-        return null;
+        return intent;
     }
 
     /**
@@ -191,15 +216,18 @@ public class GalleryActivity
         // that can be used to broadcast the downloaded image list to
         // a BroadcastReceiver (the MainActivity).
         // TODO -- you fill in here.
-        
+        Intent intent = makeBroadcastIntent(outputUrls);
         // Call the Activity class helper method to
         // send this intent in a local broadcast to the main activity.
         // TODO -- you fill in here.
-        
+        LocalBroadcastManager.getInstance(GalleryActivity.this)
+                .sendBroadcast(intent);
         // Call an Activity method to end this activity and return
         // to parent activity.
         // TODO -- you fill in here.
-        
+        GalleryActivity.this.finish();
+
+
         Log.d(TAG, "Activity finished.");
     }
 }

@@ -1,6 +1,7 @@
 package vandy.mooc.aad2.assignment.downloader;
 
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -25,7 +26,7 @@ public class HaMeRDownloader extends ImageDownloader {
     // Create a private final Handler associated with the main thread looper.
     // Note that this class and all its fields are instantiated in the main thread.
     // TODO - you fill in here.
-    
+    private AsyncTask<Void, Void, Bitmap> mTask;
     /**
      * A reference to the background thread to support the cancel hook.
      */
@@ -36,50 +37,27 @@ public class HaMeRDownloader extends ImageDownloader {
      */
     @Override
     public void execute() {
-        // Create a new final Runnable called 'downloadRunnable' to
-        // process the download request (replace the null).
-        // TODO - you fill in here.
+        mTask = new AsyncTask<Void, Void, Bitmap>() {
+            //  In the background: Call abstract class helper method to perform the download request and decode the resource.
+            @Override
+            protected Bitmap doInBackground(Void... params) {
+                return download();
+            }
+            //  After downloading is complete: Call the super class setResource helper method to set the resource.
+            //  The helper will also display and error bitmap if the passed bitmap is null (signalling a failed download).
+            @Override
+            protected void onPostExecute(Bitmap image) {
+                if(image != null)
+                    postResult(image);
+                else
+                    postResult(null);
 
-        Runnable downloadRunnable = () -> {
-            // Within the new runnable's run() method:
-
-            // Call the HaMeRDownloader helper method to
-            // determine if this thread has been interrupted; if so,
-            // just return to terminate the thread.
-            // TODO - you fill in here.
-            
-
-            // Call ImageDownloader super class helper method download()
-            // to download the bitmap.
-            // TODO - you fill in here.
-            
-
-
-            // Since the download my take a while, check again to
-            // make sure that this thread has not been interrupted (using
-            // the same helper method as above); if it has been interrupted
-            // then just return to terminate the thread.
-            // TODO - you fill in here.
-            
-
-            // Use the mHandler post(...) helper method to post
-            // a new Runnable to the main thread. This Runnable's run()
-            // method should simply call the ImageDownloader super class
-            // helper method postResult(...) to pass the downloaded bitmap
-            // to the application UI layer (activity) to display.
-            // TODO - you fill in here.
-            
+            }
         };
-        // Create a new Thread instance that will run the
-        // 'downloadRunnable' created above, and assign it to the mThread
-        // field. This assignment is necessary to support cancelling this
-        // thread and the download operation.
-        // TODO - you fill in here.
-        
 
-        // Start the thread.
-        // TODO - you fill in here.
-        
+        //  run mTask.
+        mTask.execute();
+
     }
 
     /**
@@ -91,7 +69,7 @@ public class HaMeRDownloader extends ImageDownloader {
         // is currently running; if it is running, cancel it by calling its
         // interrupt() helper method.
         // TODO - you fill in here.
-        
+        mTask.cancel(isRunning());
     }
 
     /**
@@ -105,7 +83,7 @@ public class HaMeRDownloader extends ImageDownloader {
         // (see isAlive() helper method)
 
         // TODO - you fill in here replacing the following statement with your solution.
-        return false;
+        return mTask.getStatus() == AsyncTask.Status.RUNNING;
     }
 
     /**
@@ -119,7 +97,7 @@ public class HaMeRDownloader extends ImageDownloader {
         // interrupted (see isInterrupted() helper method).
 
         // TODO - you fill in here replacing the following statement with your solution.
-        return false;
+        return mTask.isCancelled();
     }
 
     /**
@@ -136,6 +114,7 @@ public class HaMeRDownloader extends ImageDownloader {
         // compare it to the the appropriate Thread.State enumerated value.
 
         // TODO - you fill in here replacing the following statement with your solution.
-        return false;
+        return mTask.getStatus() == AsyncTask.Status.FINISHED;
+
     }
 }

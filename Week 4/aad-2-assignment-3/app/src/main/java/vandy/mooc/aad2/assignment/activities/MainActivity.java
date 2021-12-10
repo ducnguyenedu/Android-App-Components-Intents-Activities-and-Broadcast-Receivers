@@ -79,7 +79,7 @@ public class MainActivity extends MainActivityBase {
         // Call local helper method to setup a broadcast receiver
         // that will receive and display a list  of local image URLs.
         // TODO -- you fill in here.
-        
+        setupBroadcastReceiver();
     }
 
     /**
@@ -89,11 +89,13 @@ public class MainActivity extends MainActivityBase {
     protected void onDestroy() {
         // Unregister the broadcast receiver.
         // TODO -- you fill in here.
-        
+
+        LocalBroadcastManager.getInstance(this)
+                .unregisterReceiver(mBroadcastReceiver);
 
         // Always call super method.
         // TODO -- you fill in here.
-        
+        super.onDestroy();
     }
 
 
@@ -106,7 +108,8 @@ public class MainActivity extends MainActivityBase {
     protected void startDownload(ArrayList<Uri> urls) {
         // Start the Gallery Activity with the passed in Uri(s)
         // TODO -- you fill in here.
-        
+        Intent intent = GalleryActivity.makeStartIntent(this, urls);
+        startActivity(intent);
     }
 
     /**
@@ -119,7 +122,8 @@ public class MainActivity extends MainActivityBase {
     protected void startDownloadForResult(ArrayList<Uri> urls) {
         // Start the Gallery Activity for result with the passed in Uris(s).
         // TODO -- you fill in here.
-        
+        Intent intent = GalleryActivity.makeStartIntent(this, urls);
+        startActivityForResult(intent, DOWNLOAD_REQUEST_CODE);
     }
 
     /**
@@ -138,17 +142,20 @@ public class MainActivity extends MainActivityBase {
         // Create a new instance of the local broadcast receiver
         // class object (defined below).
         // TODO -- you fill in here.
-        
+        mBroadcastReceiver = new ImageViewBroadcastReceiver();
 
         // Create a new broadcast intent filter that will
         // filter (receive) ACTION_VIEW intents.
         // TODO -- you fill in here.
-        
+        IntentFilter intentFilter =
+                new IntentFilter(MainActivity.ACTION_VIEW_LOCAL);
 
         // Call the Activity class helper method to register
         // this local receiver instance.
         // TODO -- you fill in here.
-        
+        LocalBroadcastManager.getInstance(this)
+                .registerReceiver(mBroadcastReceiver,
+                        intentFilter);
     }
 
     /*
@@ -176,7 +183,7 @@ public class MainActivity extends MainActivityBase {
         // Check if the request code matches the expected
         // static DOWNLOAD_REQUEST_CODE field value. If so then ...
         // TODO -- you fill in here.
-            
+        if (requestCode == DOWNLOAD_REQUEST_CODE) {
             // If the result code is RESULT_OK, then
             // call a local helper method to extract and display the returned
             // list of image URLs. Otherwise, call the ViewUtils show toast
@@ -184,23 +191,25 @@ public class MainActivity extends MainActivityBase {
             // R.string.download_activity_cancelled. In either case, return
             // without calling the super class method.
             // TODO -- you fill in here.
-                
+            if (resultCode == RESULT_OK) {
 
                 // Extract and display the downloaded images ...
                 // TODO -- you fill in here.
-                
+                extractAndUpdateUrls(data);
+            } else {
 
                 // Show a toast ...
                 // TODO -- you fill in here.
-            
+                ViewUtils.showToast(this, R.string.download_activity_cancelled);
 
-            // Return ...
-            // TODO -- you fill in here.
-            
+                // Return ...
+                // TODO -- you fill in here.
+                return;
+            }
             // DownloadActivity was not started with correct request code.
             // TODO -- you fill in here.
-        
 
+        }
         // Allow super class to handle results from unknown origins.
         // TODO -- you fill in here.
         
@@ -217,17 +226,19 @@ public class MainActivity extends MainActivityBase {
         // Extract the list of downloaded image URLs from the
         // passed intent.
         // TODO -- you fill in here.
-        
+        ArrayList<Uri> urls = intent.getParcelableArrayListExtra(GalleryActivity.INTENT_EXTRA_URLS);
 
         // If the list is empty, call ViewUtils show toast helper
         // to display the string resource R.string.no_images_received.
         // TODO -- you fill in here.
-        
+        if(urls.isEmpty()) {
+            ViewUtils.showToast(this, R.string.no_images_received);
+        }
 
         // Always call the base class setItems() helper which
         // will refresh the layout to show the received list of URLs.
         // TODO -- you fill in here.
-        
+        setItems(urls);
     }
 
 
@@ -263,7 +274,7 @@ public class MainActivity extends MainActivityBase {
             // call helper method to extract and display
             // the received list of image URLs.
             // TODO -- you fill in here.
-            
+            extractAndUpdateUrls(intent);
         }
     }
 }
