@@ -1,5 +1,6 @@
 package vandy.mooc.aad2.assignment.activities;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -71,7 +72,8 @@ public class MainActivity extends MainActivityBase {
     protected void startDownloadForResult(ArrayList<Uri> urls) {
         // Start the Gallery Activity for result with the passed in Uri(s)
         // TODO - you fill in here.
-        
+        Intent intent = GalleryActivity.makeStartIntent(this, urls);
+        startActivityForResult(intent, DOWNLOAD_REQUEST_CODE);
     }
 
     /*
@@ -115,18 +117,22 @@ public class MainActivity extends MainActivityBase {
 
                 // Show a toast ...
                 // TODO -- you fill in here.
-            
 
-            // Return ...
-            // TODO -- you fill in here.
-            
-            // DownloadActivity was not started with correct request code.
-            // TODO -- you fill in here.
-        
+
+        // Return ...
+        // TODO -- you fill in here.
+
+        // DownloadActivity was not started with correct request code.
+        // TODO -- you fill in here.
+
 
         // Allow super class to handle results from unknown origins.
         // TODO -- you fill in here.
-        
+        if (resultCode == Activity.RESULT_OK && requestCode == DOWNLOAD_REQUEST_CODE) {
+            extractAndUpdateUrls(data);
+        } else {
+            ViewUtils.showToast(this, R.string.download_activity_cancelled);
+        }
     }
 
     /**
@@ -140,18 +146,20 @@ public class MainActivity extends MainActivityBase {
         // Extract the list of downloaded image URLs from the
         // passed intent.
         // TODO - you fill in here.
-        
 
+        ArrayList<Uri> urls = intent.getParcelableArrayListExtra(GalleryActivity.INTENT_EXTRA_URLS);
         // If the list is empty, call ViewUtils show toast helper
         // to display the string resource R.string.no_images_received.
         // TODO - you fill in here.
-        
+        if (urls.isEmpty()) {
+            ViewUtils.showToast(this, R.string.no_images_received);
+        }
 
         // Always call the base class setItems() helper which will
         // refresh the layout to display the list contents (or nothing if the
         // list is empty)
         // TODO - you fill in here.
-        
+        setItems(urls);
     }
 
 

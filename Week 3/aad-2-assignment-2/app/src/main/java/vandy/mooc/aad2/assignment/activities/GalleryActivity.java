@@ -6,17 +6,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.NonNull;
 import vandy.mooc.aad2.assignment.R;
 import vandy.mooc.aad2.assignment.downloader.HaMeRDownloader;
 import vandy.mooc.aad2.framework.application.activities.GalleryActivityBase;
-
-import static java.util.Collections.*;
-import static vandy.mooc.aad2.framework.utils.UriUtils.*;
-import static vandy.mooc.aad2.framework.utils.ViewUtils.*;
+import vandy.mooc.aad2.framework.utils.UriUtils;
+import vandy.mooc.aad2.framework.utils.ViewUtils;
 
 /**
  * This activity class contains helper methods to support different was you can
@@ -59,17 +58,18 @@ public class GalleryActivity
         // See this guide if you have any difficulties.
         // https://developer.android.com/training/basics/firstapp/starting-activity.html
         // TODO - you fill in here.
-        
+        Intent intent = new Intent(context, GalleryActivity.class);
 
         // Put the received list of input URLs as an intent
         // use putParcelableArrayListExtra(String, ArrayList<Uri>) on the intent
         // using the predefined INTENT_EXTRA_URLS extra name.
         // TODO - you fill in here.
-        
+        intent.putExtra(INTENT_EXTRA_URLS, inputUrls);
+
 
         // Return the intent.
         // TODO - you fill in here replacing null with the appropriate value.
-        return null;
+        return intent;
     }
 
     /*
@@ -94,13 +94,15 @@ public class GalleryActivity
             // starting intent and pass these URLs into the super class using
             // the setItems() helper method.
             // TODO - you fill in here.
-            
+            List<Uri> urlList = extractInputUrlsFromIntent(getIntent());
+            if (urlList != null)
+                setItems(urlList);
         }
 
         // Call base class helper method to register your downloader
         // implementation class.
         // TODO - you fill in here.
-        
+        registerDownloader(HaMeRDownloader.class);
     }
 
     /**
@@ -116,7 +118,10 @@ public class GalleryActivity
         // validateInput() helper method. If the entire list of received URLs
         // are valid, then return this list. Otherwise return null.
         // TODO - you fill in here replacing this statement with you solution.
-        return null;
+        ArrayList<Uri> urls = intent.getParcelableArrayListExtra(INTENT_EXTRA_URLS);
+        if (!validateInput(urls))
+            return null;
+        return urls;
     }
 
     /**
@@ -143,7 +148,29 @@ public class GalleryActivity
         // Return true if all the URLs are valid.
 
         // TODO - you fill in here replacing this statement with you solution.
-        return false;
+        if (inputUrls == null) {
+            ViewUtils.showToast(getApplicationContext(), R.string.input_url_list_is_null);
+            return false;
+        }
+        // If the list has a size of 0 then call ViewUtils.showToast()
+        // to display the the string R.string.input_url_list_is_empty
+        else if (inputUrls.size() == 0) {
+            ViewUtils.showToast(getApplicationContext(), R.string.input_url_list_is_empty);
+            return false;
+        }
+        // Otherwise check if each list entry is valid using the
+        // UriUtils.isValidUrl() helper and if any URL is not valid
+        // return false.
+        else {
+            for (Uri uri : inputUrls) {
+                if (!UriUtils.isValidUrl(uri.toString())) {
+                    return false;
+                }
+            }
+        }
+        // Return true if all the URLs are valid.
+        // Input passed all tests, so return true.
+        return true;
     }
 
     /**
@@ -163,7 +190,11 @@ public class GalleryActivity
         // outputUrls list into the intent as an ParcelableArrayListExtra,
         // and return the intent.
         // TODO - you fill in here replacing this statement with you solution.
-        return null;
+        Intent intent = new Intent(this, GalleryActivity.class);
+
+        intent.putParcelableArrayListExtra(INTENT_EXTRA_URLS, outputUrls);
+
+        return intent;
     }
 
     /**
@@ -180,16 +211,16 @@ public class GalleryActivity
         // intent that contains the list of currently displayed URLs
         // as an intent extra.
         // TODO - you fill in here.
-        
+        Intent intent = makeResultIntent(urls);
 
         // Now set the result intent to return.
         // TODO - you fill in here.
-        
 
+        setResult(RESULT_OK, intent);
         // Call an Activity method to end this activity and return
         // to parent activity.
         // TODO - you fill in here.
-        
+        finish();
 
         Log.d(TAG, "Activity finished.");
     }
