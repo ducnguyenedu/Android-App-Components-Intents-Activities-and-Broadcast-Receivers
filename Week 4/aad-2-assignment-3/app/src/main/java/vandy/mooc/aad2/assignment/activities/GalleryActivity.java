@@ -56,13 +56,13 @@ public class GalleryActivity
         // See this guide if you have any difficulties.
         // https://developer.android.com/training/basics/firstapp/starting-activity.html
         // TODO - you fill in here.
-        
+        Intent intent = new Intent(context,GalleryActivity.class);
 
         // Put the received list of input URLs as an intent
         // use putParcelableArrayListExtra(String, ArrayList<Uri>) on the intent
         // using the predefined INTENT_EXTRA_URLS extra name.
         // TODO - you fill in here.
-        
+        intent.putParcelableArrayListExtra(INTENT_EXTRA_URLS, inputUrls);
 
         // Return the intent.
         // TODO - you fill in here replacing null with the appropriate value.
